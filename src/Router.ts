@@ -22,7 +22,7 @@ export default class Router implements IRouter {
 
   private addPage(path: string, callback: PageJS.Callback) {
     page(path, callback);
-    page(`/mokelab.github.io/url_with_password${path}`, callback);
+    page(`/url_with_password${path}`, callback);
   }
 
   start(): void {
