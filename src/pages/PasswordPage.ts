@@ -25,12 +25,12 @@ export default class PasswordPage implements IPage {
   private async decrypt() {
     const password = this.ractive.get("password");
 
-    const bytes = CryptoJS.AES.decrypt(this.data, password);
+    const src = this.data.replace(/:/g, "/");
+    const bytes = CryptoJS.AES.decrypt(src, password);
     const decrypted = bytes.toString(CryptoJS.enc.Utf8);
-    const decrypted2 = decrypted.replace(/:/g, "/");
     this.ractive.set({
       error: "",
-      url: `https://${decrypted2}`,
+      url: `https://${decrypted}`,
     });
   }
 
