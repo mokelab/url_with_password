@@ -27,9 +27,10 @@ export default class PasswordPage implements IPage {
 
     const bytes = CryptoJS.AES.decrypt(this.data, password);
     const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+    const decrypted2 = decrypted.replace(/:/g, "/");
     this.ractive.set({
       error: "",
-      url: `https://${decrypted}`,
+      url: `https://${decrypted2}`,
     });
   }
 

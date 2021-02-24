@@ -37,9 +37,9 @@ export default class TopPage implements IPage {
     }
     const data = url.substring("https://".length);
 
-    const encrypted = encodeURIComponent(
-      CryptoJS.AES.encrypt(data, password).toString()
-    );
+    const str = CryptoJS.AES.encrypt(data, password).toString();
+    const str2 = str.replace(/\//g, ":");
+    const encrypted = encodeURIComponent(str2);
     this.ractive.set({
       error: "",
       encrypted: `https://mokelab.github.io/url_with_password/u/${encrypted}`,
