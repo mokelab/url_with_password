@@ -1,8 +1,47 @@
-<h1>Top</h1>
+<div class="main top">
+    <div class="mdc-card">
+      <h2>Make new URL</h2>
+      <div class="form">
+        <TextField
+          id="url-input"
+          type="text"
+          name="url"
+          label="URL"
+          value="{{url}}"
+          required/>              
+      </div>
+      <div class="form">
+        <TextField
+          id="password-input"
+          type="password"
+          name="password"
+          label="Password"
+          value="{{password}}"
+          required/>
+      </div>
+      <div>
+        <RaisedButton on-click="create">Create</RaisedButton>
+      </div>
+    </div>
 
-<button
-  as-mdl
-  class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent"
->
-  OK
-</button>
+    {{#if error.length > 0}}
+    <p>{{error}}</p>
+    {{/if}}
+
+    {{#if encrypted.length > 0}}
+    <div class="mdc-card">
+      <h2>URL to be shared</h2>
+      <div class="output">
+        <TextField
+          class="form"
+          id="encrypted-input"
+          type="text"
+          name="encrypted"
+          label="Encrypted"
+          value="{{encrypted}}"
+          required/>
+        <RaisedButton class="button" on-click="copy">Copy</RaisedButton>                              
+      </div>
+    </div>
+    {{/if}}
+</div>

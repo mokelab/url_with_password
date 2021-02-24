@@ -1,0 +1,24 @@
+.top {
+  .mdc-card {
+    padding: 16px;
+    margin: 8px 0;
+  }
+  .form {
+    width: 100%;
+    margin: 8px 0;
+    .mdc-text-field {
+      width: 100%;
+    }
+  }
+  .output {
+    display: flex;
+    align-items: center;
+    .form {
+      flex-grow: 1;
+    }
+    .button {
+      flex-grow: 0;
+      margin-left: 16px;
+    }
+  }
+}

@@ -1,21 +1,24 @@
 /// <reference path="./IRouter.ts" />
-/// <reference path="./page.d.ts" />
 /// <reference path="./IApplication.ts" />
 /// <reference path="./pages/IPage.ts" />
 
+import page from "page";
 import TopPage from "./pages/TopPage";
-import LoginPage from "./pages/LoginPage";
 import WidgetSamplePage from "./pages/WidgetSample";
 
 export default class Router implements IRouter {
     constructor(app: IApplication) {
-        page("/", () => {
-            //this.showPage(new TopPage(app));
-            this.showPage(new LoginPage(app));
+        this.addPage("/", () => {
+            this.showPage(new TopPage(app));
         });
-        page("/sample", () => {
+        this.addPage("/sample", () => {
             this.showPage(new WidgetSamplePage(app));
         });
+    }
+
+    private addPage(path: string, callback: PageJS.Callback) {
+        page(path, callback);
+        page(`/mokelab.github.io/url_with_password${path}`, callback);
     }
 
     start(): void {

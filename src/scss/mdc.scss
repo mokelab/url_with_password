@@ -1,6 +1,6 @@
 @use "@material/theme" with (
-  $primary: #9c27b0,
-  $secondary: #76ff03,
+  $primary: #ff9800,
+  $secondary: #26a69a,
   $background: #fff,
 );
 
@@ -24,6 +24,9 @@
 
 // list
 @use "@material/list";
+
+// snackbar
+@use "@material/snackbar/mdc-snackbar";
 
 @include textfield.core-styles;
 @include list.core-styles;
