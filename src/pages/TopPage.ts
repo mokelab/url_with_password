@@ -42,7 +42,7 @@ export default class TopPage implements IPage {
     );
     this.ractive.set({
       error: "",
-      encrypted: `https:///mokelab.github.io/url_with_password/${encrypted}`,
+      encrypted: `https://mokelab.github.io/url_with_password/u/${encrypted}`,
     });
   }
 

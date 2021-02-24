@@ -3,6 +3,7 @@
 
 interface IApplication {
   services: IServices;
+  appBar: IAppBar;
 
   start(router: IRouter): void;
 

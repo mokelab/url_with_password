@@ -26,7 +26,7 @@ export default class Application implements IApplication {
 
     this.drawer = drawerFactory(this);
     this.appBar = appBarFactory(this.drawer);
-    this.appBar.setHasDrawer(true);
+    this.appBar.setHasDrawer(false);
     this.snackBar = new MDCSnackbar(document.querySelector(".mdc-snackbar")!);
   }
 
